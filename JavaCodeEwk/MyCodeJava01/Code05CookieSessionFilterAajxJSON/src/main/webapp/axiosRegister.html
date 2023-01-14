@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>添加品牌</h3>
+<form action="" method="post">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td>
+                <input name="id" id="id">
+                <span id="idError" style="display: none">id长度不超过6</span>
+            </td>
+        </tr>
+        <tr>
+            <td>品牌名称:</td>
+            <td>
+                <input name="brandName" id="brandName">
+            </td>
+        </tr>
+        <tr>
+            <td>企业名称:</td>
+            <td>
+                <input name="enterpriseName" id="enterpriseName">
+            </td>
+        </tr>
+        <tr>
+            <td>描述信息:</td>
+            <td>
+                <textarea rows="5" cols="20" name="introduce" id="introduce"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="提交">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<!-- 本地文件: <script src="axios.min.js"></script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    document.getElementById("id").onblur = function () {  // 失去焦点,则发送请求
+        const id = this.value;
+        /*
+        // 1.get方式
+        axios({
+            method:"get",
+            url:"http://localhost:8080/axios?id="+id
+        }).then(function (resp){
+            if (resp.status == 200) {
+                if ((resp.data.toString()).length > 6) {
+                    document.getElementById("idError").style.display = '';
+                } else {
+                    document.getElementById("idError").style.display = 'none';
+                }
+            }
+        })
+         */
+        // 2.post方式
+        axios({
+            method: "post",
+            url: "http://localhost:8080/axios",
+            data: "id=" + id
+        }).then(function (resp) {
+            const data = resp.data.toString();
+            if (resp.status == 200) {
+                if (data.length > 6) {
+                    document.getElementById("idError").style.display = '';
+                } else {
+                    document.getElementById("idError").style.display = 'none';
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

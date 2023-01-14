@@ -1,0 +1,21 @@
+CREATE DATABASE brand;
+use brand;
+show databases;
+CREATE TABLE IF NOT EXISTS `sheet`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`brandName` VARCHAR(100) NOT NULL,
+`enterpriseName` VARCHAR(100) NOT NULL,
+`introduce` VARCHAR(100) NOT NULL,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SHOW TABLES FROM brand;
+SHOW COLUMNS FROM sheet;
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1,"三只松鼠","三只松鼠","三只松鼠,好吃不上火");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(2,"优衣库","优衣库","优衣库,舒适人生");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(3,"小米","小米科技有限公司","为发烧而生");
+select * from sheet;
+
+delete from sheet;
+DROP TABLE sheet;
+drop database brand;
+show databases;

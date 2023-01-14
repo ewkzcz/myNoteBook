@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用HTML5拖拽开发购物车</title>
+        <style type="text/css">
+            *{padding: 0px;margin: 0px;}
+            img{width: 220px;height: 180px;margin: 9px;}
+            li{width: 245px;margin: 9px;border: 1px solid #333;float: left;list-style-type: none;}
+            p{text-align: center;clear: both;}
+            #div1{width: 1200px;height: 250px;margin: 0 auto;border: 1px dashed #666666;clear: both;}
+            #div2{width: 1200px;height: 280px;margin: 0 auto;padding: 5px;text-align: center;border: 5px ridge #678966;}
+            span.box0{width: 16px;float: left;border: 1px dashed #006e38;}
+            span.box1{width: 380px;float: left;border-bottom: 1px dashed #006e38;}
+            span.box2{width: 380px;float: left;border-bottom: 1px dashed #006e38;}
+            span.box3{width: 380px;float: left;border-bottom: 1px dashed #006e38;}
+            #allMoney{padding-right: 200px;float: right;}
+            h3{clear: both;text-align: center;font-size: 28px;}
+            pre{text-align: center;font-size: 24px;}
+        </style>
+        <script type="text/javascript" charset="utf-8">
+            // 窗口加载后，初始化程序
+            window.onload = function(){ 
+                var odiv = document.getElementById("div1");
+                var ali = document.getElementsByTagName("li");
+                var obj = {};
+                var allMoney = null;
+                var inum = 0;
+                var wayno = 0;
+                for(var i=0;i<ali.length;i++){
+                    ali[i].ondragstart = function(ev){
+                        var ap = this.getElementsByTagName("p");
+                        ev.dataTransfer.setData("title",ap[0].innerHTML);
+                        ev.dataTransfer.setData("money",ap[1].innerHTML);
+                        ev.dataTransfer.setDragImage(this,0,0);
+                    }
+                }
+                // 拖动盘旋函数
+                odiv.ondragover = function(ev){
+                    ev.preventDefault();
+                }
+                // 放置函数
+                odiv.ondrop = function(ev){
+					ev.preventDefault();
+					var stitle = ev.dataTransfer.getData('title');  // 取出线路名称
+					var smoney = ev.dataTransfer.getData('money');  // 取出线路单价
+					// 序号，线路名称，数量，单价
+					if(!obj[stitle]) {
+                        //创建一个p
+						var op = document.createElement('p');
+                        // 创建第1个span，显示序号
+						var ospan = document.createElement('span');
+						ospan.className = 'box0';  //添加类属性
+						ospan.innerHTML = '<h4>'+(wayno+1)+'.</h4>';
+						op.appendChild(ospan);	
+                        // 创建第2个span，显示路线		
+						var ospan = document.createElement('span');
+						ospan.className = 'box2';  //添加类属性
+						ospan.innerHTML = stitle;
+						op.appendChild(ospan);				
+                        // 创建第3个span，显示数量	
+						var ospan = document.createElement('span');  
+						ospan.className = 'box1';  //设置span的类名为box1
+						ospan.innerHTML = 1;  //设置内容为1,这是数量
+						op.appendChild(ospan);
+                        // 创建第4个span，显示报价
+						var ospan = document.createElement('span');
+						ospan.className = 'box3';
+						ospan.innerHTML = smoney;
+						op.appendChild(ospan);
+                        // 将p添加到div中
+						odiv.appendChild(op);
+						obj[stitle] = 1;	
+						wayno++;
+					} else {//重复线路只修改数量及价格
+						var box1 = document.getElementsByClassName('box1');
+						var box2 = document.getElementsByClassName('box2');
+						for(var i = 0; i < box2.length; i++) {
+							if(box2[i].innerHTML == stitle) {
+								box1[i].innerHTML = parseInt(box1[i].innerHTML) + 1;
+							}
+						}
+					}
+          			// 创建一个div,存放计算线路总价
+					if(!allMoney) {
+						allMoney = document.createElement('div');//创建div对象
+						allMoney.id = 'allMoney';
+					}
+					inum += parseInt(smoney);//解析为整数				
+					allMoney.innerHTML = "总计:"+inum + '元';
+					odiv.appendChild(allMoney);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>国内跟团旅游线路选购</h3>
+        <hr color="#006600">
+        <div id="div2">
+            <ul>
+                <li draggable="true">
+                    <img src="1.jpg">
+                    <p>长沙-张家界-凤凰古城双高6日游</p>
+                    <p>1000元</p>
+                </li>
+                <li draggable="true">
+                    <img src="2.jpg">
+                    <p>张家界-玻璃桥-天门山-玻璃栈道-凤凰古城双高6日游</p>
+                    <p>2000元</p>
+                </li>
+                <li draggable="true">
+                    <img src="3.jpg">
+                    <p>三亚-蜈支洲-天涯海角5日游</p>
+                    <p>3000元</p>
+                </li>
+                <li draggable="true">
+                    <img src="4.jpg">
+                    <p>昆明-大理-丽江-香格里拉双飞8日游</p>
+                    <p>4000元</p>
+                </li>
+            </ul>
+        </div>
+        <h3>客户选购旅游线路</h3>
+        <pre>旅游线路名称                数量                报价</pre>
+        <div id="div1"></div>
+    </body>
+</html>

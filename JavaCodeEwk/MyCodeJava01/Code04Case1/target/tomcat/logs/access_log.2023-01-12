@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:03 +0800] "GET / HTTP/1.1" 200 174 http-bio-1234-exec-1 31
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:04 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-1234-exec-2 3
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:10 +0800] "GET /selectAllServlet HTTP/1.1" 200 3456 http-bio-1234-exec-3 641
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:15 +0800] "GET /selectAllServlet HTTP/1.1" 200 3456 http-bio-1234-exec-4 7
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:18 +0800] "GET /selectByIdServlet?id=1008 HTTP/1.1" 200 723 http-bio-1234-exec-5 13
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:10:50:22 +0800] "GET /addBrand.jsp HTTP/1.1" 200 478 http-bio-1234-exec-6 355
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:18:03:11 +0800] "GET / HTTP/1.1" 200 174 http-bio-1234-exec-1 22
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:18:03:11 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-1234-exec-2 3
+0:0:0:0:0:0:0:1 - - [12/Jan/2023:18:03:14 +0800] "GET /selectAllServlet HTTP/1.1" 200 3456 http-bio-1234-exec-3 623

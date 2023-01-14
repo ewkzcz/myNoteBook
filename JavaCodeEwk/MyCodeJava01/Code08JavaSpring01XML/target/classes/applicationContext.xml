@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+    <!-- 配置bean: 构造方法注入,index传参 -->
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="singleton" init-method="init" destroy-method="destroy">
+        <!-- 三种传参方式: name,type,index
+        <constructor-arg name="connectNum" value="10"/>
+        <constructor-arg name="databaseNum" value="student"/>
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg type="java.lang.String" value="student"/>
+        -->
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="student"/>
+    </bean>
+    <bean id="bookService" class="ewk.code08.book.BookServiceClass" scope="singleton">
+        <!-- name: 通过构造方法的形参名称识别 -->
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean>
+
+    <!-- 方法1: 构造方法
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="prototype"/>
+    -->
+
+    <!-- 方法2: 静态工厂实例化bean
+    <bean id="bookDao" class="ewk.code08.book.BookDaoFactory" factory-method="getBookDao" scope="prototype"/>
+    -->
+
+    <!-- 方法3: 实例工厂实例化bean(不常用,省略test)
+    <bean id="aFactory" class="com.factory.aDaoFactory"/>
+    <bean id="aDao" factory-method="getDao" factory-bean="aFactory"/>
+    -->
+
+    <!-- 方法4: 使用FactoryBean实例化bean
+    <bean id="bookDao" class="ewk.code08.book.BookDaoFactoryBean"/>
+    -->
+
+    <!-- 依赖注入方式(set)
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="singleton" init-method="init" destroy-method="destroy">
+        <property name="connectNum" value="10"/>
+        <property name="databaseNum" value="student"/>
+    </bean>
+    <bean id="bookService" class="ewk.code08.book.BookServiceClass" scope="singleton">
+        // name: 将变为setBookBao找到对应的set方法, ref: 当前容器中bean的名称
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+    -->
+
+    <!-- 依赖注入方式(构造器)
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="singleton" init-method="init" destroy-method="destroy">
+        // 三种传参方式: name,type,index
+        // <constructor-arg name="connectNum" value="10"/>
+        // <constructor-arg name="databaseNum" value="student"/>
+        // <constructor-arg type="int" value="10"/>
+        // <constructor-arg type="java.lang.String" value="student"/>
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="student"/>
+    </bean>
+    <bean id="bookService" class="ewk.code08.book.BookServiceClass" scope="singleton">
+        // name: 通过构造方法的形参名称识别
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean>
+    -->
+
+    <!-- 自动装配: 按类型
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="singleton"/>
+    <bean id="bookService" class="ewk.code08.book.BookServiceClass" scope="singleton" autowire="byType"/>
+    -->
+
+    <!-- 自动装配: 按名称
+    <bean id="bookDao" class="ewk.code08.book.BookDaoClass" scope="singleton"/>
+    <bean id="bookService" class="ewk.code08.book.BookServiceClass" scope="singleton" autowire="byName"/>
+    -->
+
+    <!-- 集合注入 -->
+    <bean id="bookDao1" class="ewk.code08.book.BookDaoClass1" scope="singleton">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>A</value>
+                <value>B</value>
+                <value>C</value>
+                <value>D</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="A" value="111"></entry>
+                <entry key="B" value="222"></entry>
+                <entry key="C" value="333"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="A">111</prop>
+                <prop key="B">222</prop>
+                <prop key="C">333</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 加载配置文件并通过属性占位符使用 -->
+    <context:property-placeholder location="jdbc.properties" system-properties-mode="NEVER"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+    <!-- 测试 -->
+    <bean id="bookDao2" class="ewk.code08.book.BookDaoClass2">
+       <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+
+</beans>

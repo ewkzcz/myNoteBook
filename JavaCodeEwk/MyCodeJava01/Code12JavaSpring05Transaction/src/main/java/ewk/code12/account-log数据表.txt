@@ -1,0 +1,14 @@
+use account;
+CREATE TABLE IF NOT EXISTS `accountLog`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`info` VARCHAR(100) NOT NULL,
+`date` TIME NOT NULL,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SHOW TABLES FROM account;
+SHOW COLUMNS FROM accountLog;
+# INSERT INTO accountLog(id,info,date) VALUES(1001,"转账操作由Tom到Jerry,金额:100.0","20:55:49");
+select * from accountLog;
+
+delete from accountLog;
+DROP TABLE accountLog;

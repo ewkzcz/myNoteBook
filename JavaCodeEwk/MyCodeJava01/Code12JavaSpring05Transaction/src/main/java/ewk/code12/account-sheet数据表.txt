@@ -1,0 +1,21 @@
+CREATE DATABASE account;
+use account;
+show databases;
+CREATE TABLE IF NOT EXISTS `sheet`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(100) NOT NULL,
+`money` DOUBLE NOT NULL,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SHOW TABLES FROM account;
+SHOW COLUMNS FROM sheet;
+INSERT INTO sheet(id,name,money) VALUES(1001,"Tom1",1000);
+INSERT INTO sheet(id,name,money) VALUES(1002,"Tom2",500);
+INSERT INTO sheet(id,name,money) VALUES(1003,"Tom3",1500);
+select * from sheet;
+
+delete from sheet;
+DROP TABLE sheet;
+
+drop database account;
+show databases;

@@ -1,7 +1,5 @@
 #### GitHub使用笔记
 
-[(参考内容)Github使用教程-黑马程序员]: https://www.bilibili.com/video/BV1st411r7Sj/?share_source=copy_web&amp;vd_source=5bf235313551b69ea95a3483fa733cc
-
 ##### 一. 基本概念&注册登录
 
 ###### 1.基本概念
@@ -259,6 +257,8 @@ git remote -v
 
 - 执行 git init 的时候，默认情况下 Git 就会为你创建 master 分支
 
+- 克隆时,默认分支与远程分支相同
+
 - GitHub默认有main分支,Git默认为master分支,,建议在GitHub-setting-branches中将main修改为master
 
 ###### 2.git克隆仓库
@@ -353,15 +353,20 @@ git config core.autocrlf
 
 - github pages只支持静态网页
 - 仓库里面只能是.html文件
+- 无法访问可能是网络问题
 
 ###### 2.项目站点
 
 访问(http://用户名.github.io/仓库名)
 
-搭建步骤
+搭建步骤(Github网站已更新,此步骤生效)
 
 - 项目主页-setting
 - Launch automatic page geerator生成主题页面
 - 新建站点基础信息设置
 - 选择主题
 - 生成网页
+
+##### 参考内容
+
+Github使用教程-黑马程序员 https://www.bilibili.com/video/BV1st411r7Sj/?share_source=copy_web&amp;vd_source=5bf235313551b69ea95a3483fa733cc (部分内容已过时)

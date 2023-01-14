@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <!-- url中包含连接数据库的名称,必须修改 -->
+                <property name="url" value="jdbc:mysql:///brand?useUnicode=true&amp;useServerPrepStmts=true&amp;characterEncoding=UTF-8&amp;userSSL=false&amp;serverTimezone=GMT%2B8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--加载sql映射文件(包含sql语句信息)-->
+    <mappers>
+        <!-- 包扫描方式 -->
+        <package name="ewk.code07.mapper"/>  <!-- 路径,待修改 -->
+    </mappers>
+</configuration>

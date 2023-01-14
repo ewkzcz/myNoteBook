@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Code05CookieSessionFilterAajxJSON" />
+        <module name="Code08JavaSpring01XML" />
+        <module name="Code07Case2" />
+        <module name="Code03ServletRequestResponseJsp" />
+        <module name="Code11JavaSpring04AOP" />
+        <module name="Code04Case1" />
+        <module name="Code12JavaSpring05Transaction" />
+        <module name="Code09JavaSpring02Component" />
+        <module name="Code13SpringMVC01" />
+        <module name="Code02MavenMyBatis" />
+        <module name="Code10JavaSpring03Mybatis" />
+        <module name="Code06VueElement" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

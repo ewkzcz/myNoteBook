@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Code02MavenMyBatis" />
+    <file type="web" url="file://$PROJECT_DIR$/Code03ServletRequestResponseJsp" />
+    <file type="web" url="file://$PROJECT_DIR$/Code04Case1" />
+    <file type="web" url="file://$PROJECT_DIR$/Code05CookieSessionFilterAajxJSON" />
+    <file type="web" url="file://$PROJECT_DIR$/Code06VueElement" />
+    <file type="web" url="file://$PROJECT_DIR$/Code07Case2" />
+    <file type="web" url="file://$PROJECT_DIR$/Code13SpringMVC01" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Code03/pom.xml" />
+        <option value="$PROJECT_DIR$/Code02/pom.xml" />
+        <option value="$PROJECT_DIR$/Code04/pom.xml" />
+        <option value="$PROJECT_DIR$/Code05/pom.xml" />
+        <option value="$PROJECT_DIR$/Code06/pom.xml" />
+        <option value="$PROJECT_DIR$/Code07/pom.xml" />
+        <option value="$PROJECT_DIR$/Code08/pom.xml" />
+        <option value="$PROJECT_DIR$/Code09JavaSpring02/pom.xml" />
+        <option value="$PROJECT_DIR$/Code08JavaSpring01/pom.xml" />
+        <option value="$PROJECT_DIR$/Code07Case2/pom.xml" />
+        <option value="$PROJECT_DIR$/Code06Vue&amp;Element/pom.xml" />
+        <option value="$PROJECT_DIR$/Code05Cookie&amp;Session&amp;Filter&amp;Aajx/pom.xml" />
+        <option value="$PROJECT_DIR$/Code04Case1/pom.xml" />
+        <option value="$PROJECT_DIR$/Code03Servlet&amp;Request&amp;Response&amp;jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/Code02Maven&amp;MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Code02MavenMyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Code05CookieSessionFilterAajx/pom.xml" />
+        <option value="$PROJECT_DIR$/Code03ServletRequestResponseJsp/pom.xml" />
+        <option value="$PROJECT_DIR$/Code06VueElement/pom.xml" />
+        <option value="$PROJECT_DIR$/Code02MavenMyBatis1/pom.xml" />
+        <option value="$PROJECT_DIR$/Code10JavaSpring03Mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Code11JavaSpring04AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/Code12JavaSpring05/pom.xml" />
+        <option value="$PROJECT_DIR$/Code12JavaSpring05Transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/Code08JavaSpring01XML/pom.xml" />
+        <option value="$PROJECT_DIR$/Code09JavaSpring02Component/pom.xml" />
+        <option value="$PROJECT_DIR$/Code05CookieSessionFilterAajxJSON/pom.xml" />
+        <option value="$PROJECT_DIR$/Code13SpringMVC01/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

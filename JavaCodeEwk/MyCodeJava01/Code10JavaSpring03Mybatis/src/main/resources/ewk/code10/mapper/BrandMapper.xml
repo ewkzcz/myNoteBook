@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ewk.code10.mapper.BrandMapper">  <!--包名.接口名: 待修改-->
+    <!-- resultMap-->
+    <resultMap id="brandResultMap" type="ewk.code10.data.Brand">   <!--包名.数据类: 待修改-->
+        <id column="id" property="id"/>
+        <result column="brandName" property="brandName"/>
+        <result column="enterpriseName" property="enterpriseName"/>
+        <result column="introduce" property="introduce"/>
+    </resultMap>
+
+    <!-- 批量删除数据 -->
+    <delete id="deleteByIds">
+        DELETE FROM sheet WHERE id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">#{id}
+        </foreach>;
+    </delete>
+
+    <!-- 多条件查询 -->
+    <select id="selectByPageAndCondition" resultMap="brandResultMap">
+        select * from sheet
+        <where>
+            <if test="brand.id != null">and id = #{brand.id}</if>
+            <if test="brand.brandName != null and brand.brandName!=''">or brandName like #{brand.brandName}</if>
+            <if test="brand.enterpriseName != null and brand.enterpriseName!=''">or enterpriseName like #{brand.enterpriseName}</if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+    <!-- 多条件查询记录数 -->
+    <select id="selectByConditionTotalCount" resultType="java.lang.Integer">
+        select count(*) from sheet
+        <where>
+            <if test="id != null">and id = #{id}</if>
+            <if test="brandName != null and brandName!=''">or brandName like #{brandName}</if>
+            <if test="enterpriseName != null and enterpriseName!=''">or enterpriseName like #{enterpriseName}</if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+delete from sheet1;
+DROP TABLE sheet1;
+drop database student;
+show databases;
+
+CREATE DATABASE student;
+use student;
+show databases;
+CREATE TABLE IF NOT EXISTS `sheet1`(
+   `stu_id` INT NOT NULL AUTO_INCREMENT,
+   `stu_name` VARCHAR(100) NOT NULL,
+   `stu_age` INT NOT NULL,
+   `stu_bir` DATE,
+   PRIMARY KEY (`stu_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SHOW TABLES FROM student;
+SHOW COLUMNS FROM sheet1;
+INSERT INTO sheet1(stu_id,stu_name,stu_age,stu_bir) VALUES(1001,"zcz",20,"2002-07-29");
+INSERT INTO sheet1(stu_id,stu_name,stu_age,stu_bir) VALUES(1002,"Tom",26,"1998-03-04");
+INSERT INTO sheet1(stu_id,stu_name,stu_age,stu_bir) VALUES(1003,"lisa",25,"1999-09-29");
+select * from sheet1;

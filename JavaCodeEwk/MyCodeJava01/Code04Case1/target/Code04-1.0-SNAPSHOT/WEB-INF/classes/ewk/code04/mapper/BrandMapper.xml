@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ewk.code04.mapper.BrandMapper">  <!--包名.接口名-->
+    <!-- resultMap字段-->
+    <resultMap id="brandResultMap" type="ewk.code04.data.Brand">
+        <!-- 主键字段的映射-->
+        <id column="id" property="id"/>
+        <!-- 一般字段的映射-->
+        <result column="brandName" property="brandName"/>
+        <result column="enterpriseName" property="enterpriseName"/>
+        <result column="introduce" property="introduce"/>
+    </resultMap>
+
+    <!-- 查询全部 -->
+    <select id="selectAll" resultMap="brandResultMap">  <!-- resultMap字段id -->
+        select * from  sheet;
+    </select>
+
+    <!-- 查看详情 -->
+    <select id="selectById" resultMap="brandResultMap">
+        select * from sheet where id = #{id};
+    </select>
+
+    <!-- 多条件查询 -->
+    <select id="selectByCondition" resultMap="brandResultMap">
+        select * from sheet
+        <where>
+        <if test="id != null">and id = #{id}</if>
+        <if test="brandName != null and brandName!=''">and brandName like #{brandName}</if>
+        <if test="enterpriseName != null and enterpriseName!=''">and enterpriseName like #{enterpriseName}</if>
+        <if test="introduce != null and introduce != ''">and introduce like #{introduce}</if>;
+        </where>
+    </select>
+
+    <!-- 单条件查询 -->
+    <select id="selectByConditionSingle" resultMap="brandResultMap">
+        select * from sheet
+        <where>
+            <choose>  <!-- 类似于switch -->
+                <when test="id != null">id = #{id}</when>  <!-- 类似于case -->
+                <when test="brandName != null and brandName!=''">brandName like #{brandName}</when>
+                <when test="enterpriseName != null and enterpriseName=''">enterpriseName like #{enterpriseName}</when>
+                <when test="introduce != null and introduce != ''">stu_bir like #{bir}</when>
+            </choose>
+        </where>
+    </select>
+
+    <!-- 添加数据,无返回 -->
+    <insert id="add">
+        INSERT INTO sheet(id,brandName,enterpriseName,introduce)
+        VALUES(#{id},#{brandName},#{enterpriseName},#{introduce});
+    </insert>
+
+    <!-- 添加数据,返回id -->
+    <insert id="addReturnId" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sheet(id,brandName,enterpriseName,introduce)
+        VALUES(#{id},#{brandName},#{enterpriseName},#{introduce});
+    </insert>
+
+    <!-- 删除一个数据 -->
+    <delete id="deleteById">
+        DELETE FROM sheet WHERE id = #{id};
+    </delete>
+
+    <!-- 批量删除数据 -->
+    <delete id="deleteByIds">
+        DELETE FROM sheet WHERE id in
+            <foreach collection="ids" item="id" separator="," open="(" close=")">#{id}
+            </foreach>;
+    </delete>
+
+    <!-- 动态修改数据 -->
+    <update id="update">
+        update sheet
+        <set>
+            <if test="brandName != null and brandName!=''">brandName = #{brandName},</if>
+            <if test="enterpriseName != null and enterpriseName=''">enterpriseName = #{enterpriseName},</if>
+            <if test="introduce != null and introduce != ''">introduce = #{introduce}</if>
+        </set>
+        where id=#{id};
+    </update>
+
+</mapper>

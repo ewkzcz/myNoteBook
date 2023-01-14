@@ -1,0 +1,26 @@
+CREATE DATABASE brand;
+use brand;
+show databases;
+CREATE TABLE IF NOT EXISTS `sheet`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`brandName` VARCHAR(100) NOT NULL,
+`enterpriseName` VARCHAR(100) NOT NULL,
+`introduce` VARCHAR(100) NOT NULL,
+PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+SHOW TABLES FROM brand;
+SHOW COLUMNS FROM sheet;
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1001,"三只松鼠","三只松鼠","三只松鼠,好吃不上火");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1002,"优衣库","优衣库","优衣库,舒适人生");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1003,"小米","小米科技有限公司","为发烧而生");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1004,"百度","百度在线网络技术公司","搜搜搜");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1005,"华为","华为技术有限公司","万物互联");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1006,"格力","格力电器股份有限公司","让世界爱上中国造");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1007,"腾讯","腾讯计算机系统有限公司","玩玩玩");
+INSERT INTO sheet(id,brandName,enterpriseName,introduce) VALUES(1008,"京东","北京京东实际贸易有限公司","就是快");
+select * from sheet;
+
+delete from sheet;
+DROP TABLE sheet;
+drop database brand;
+show databases;
