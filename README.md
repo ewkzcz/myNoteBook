@@ -1,5 +1,9 @@
 #### MyNoteBook
-###### 1.Latex笔记&amp;模板&amp;数模国二论文Latex源码
+###### 1.Latex入门
+
+- Latex笔记
+- Latex模板
+- 数模国二Latex源码
 
 ###### 2.Mysql入门笔记
 
