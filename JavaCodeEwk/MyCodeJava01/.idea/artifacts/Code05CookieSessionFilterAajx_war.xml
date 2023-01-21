@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Code05CookieSessionFilterAajx:war">
+    <output-path>$PROJECT_DIR$/Code05CookieSessionFilterAajx/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Code05CookieSessionFilterAajx</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Code05CookieSessionFilterAajx-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Code05CookieSessionFilterAajx:war exploded" />
+    </root>
+  </artifact>
+</component>

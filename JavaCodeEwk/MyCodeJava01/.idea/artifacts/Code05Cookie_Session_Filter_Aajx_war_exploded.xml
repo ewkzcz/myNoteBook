@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Code05Cookie&amp;Session&amp;Filter&amp;Aajx:war exploded">
+    <output-path>$PROJECT_DIR$/Code05Cookie&amp;Session&amp;Filter&amp;Aajx/target/Code05Cookie&amp;Session&amp;Filter&amp;Aajx-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>Code05Cookie&amp;Session&amp;Filter&amp;Aajx</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Code05CookieSessionFilterAajxJSON" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.30" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.2.15" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.11" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.11.0" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:2.0.22" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2-extension:2.0.22" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.22" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Code05Cookie&amp;Session&amp;Filter&amp;Aajx/target/Code05Cookie&amp;Session&amp;Filter&amp;Aajx-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Code05CookieSessionFilterAajxJSON/web/Web" />
+    </root>
+  </artifact>
+</component>

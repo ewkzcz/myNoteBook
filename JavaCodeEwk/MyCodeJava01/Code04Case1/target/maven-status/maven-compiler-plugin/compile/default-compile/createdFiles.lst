@@ -1,8 +1,0 @@
-ewk\code04\data\Brand.class
-ewk\code04\web\AddServlet.class
-ewk\code04\web\SelectByIdServlet.class
-ewk\code04\service\BrandService.class
-ewk\code04\util\SqlSessionFactoryUtils.class
-ewk\code04\web\SelectAllServlet.class
-ewk\code04\web\UpdateServlet.class
-ewk\code04\mapper\BrandMapper.class

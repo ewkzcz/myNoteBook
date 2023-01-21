@@ -29,15 +29,15 @@
             title="编辑品牌"
             :visible.sync="dialogVisible"
             width="30%">
-        <el-form ref="form" :model="brand" label-width="80px">
+        <el-form ref="form" :model="brandDialog" label-width="80px">
             <el-form-item label="品牌名称">
-                <el-input v-model="brand.brandName"></el-input>
+                <el-input v-model="brandDialog.brandName"></el-input>
             </el-form-item>
             <el-form-item label="企业名称">
-                <el-input v-model="brand.enterpriseName"></el-input>
+                <el-input v-model="brandDialog.enterpriseName"></el-input>
             </el-form-item>
             <el-form-item label="描述信息">
-                <el-input type="textarea" v-model="brand.introduce"></el-input>
+                <el-input type="textarea" v-model="brandDialog.introduce"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="addBrand">提交</el-button>
@@ -124,9 +124,14 @@
                 multipleSelection: [],
                 // 被选中的id数组
                 selectedIds: [],
-                // 明显数据
+                // 数据
                 brand: {
                     id: '',
+                    brandName: '',
+                    enterpriseName: '',
+                    introduce: ''
+                },
+                brandDialog: {
                     brandName: '',
                     enterpriseName: '',
                     introduce: ''
@@ -163,35 +168,29 @@
             },
             // 分页查询数据
             selectBrand(){
-                // var _this = this;
                 axios({
                     method:"post",
-                    url:"http://localhost:8080//selectByPageAndConditionServlet?currentPage="+
+                    url:"http://localhost:1007//selectByPageAndConditionServlet?currentPage="+
                         this.currentPage+"&pageSize="+this.pageSize,
                     data:this.brand
                 }).then(resp=>{
                     // 设置表格数据
-                    // _this.tableData = resp.data.rows;
                     this.tableData = resp.data.rows;
                     // 设置总条目数
-                    // _this.totalCount = resp.data.totalCount;
                     this.totalCount = resp.data.totalCount;
                 })
             },
             // 新增数据
             addBrand() {
-                // var _this = this;
                 axios({
                     method: "post",
-                    url: "http://localhost:8080/addServlet",
-                    data: this.brand
+                    url: "http://localhost:1007/addServlet",
+                    data: this.brandDialog
                 }).then(resp=>{
                     if(resp.data == "success"){
                         // 添加成功,关闭窗口
-                        // _this.dialogVisible = false;
                         this.dialogVisible = false;
                         // 重新查询
-                        // _this.selectBrand();
                         this.selectBrand();
                         // 提示信息
                         this.$message({
@@ -210,11 +209,10 @@
                     type: 'warning'
                 }).then(() => {
                     // 选择确定: 发送Ajax请求
-                    // var _this = this;
                     axios({
                         method: "post",
-                        url: "http://localhost:8080/deleteServlet",
-                        data: _this.selectedIds
+                        url: "http://localhost:1007/deleteServlet",
+                        data: this.selectedIds
                     }).then(resp=>{
                         if(resp.data == "success"){
                             // 删除成功

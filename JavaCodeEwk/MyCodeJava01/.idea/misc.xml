@@ -9,6 +9,13 @@
     <file type="web" url="file://$PROJECT_DIR$/Code06VueElement" />
     <file type="web" url="file://$PROJECT_DIR$/Code07Case2" />
     <file type="web" url="file://$PROJECT_DIR$/Code13SpringMVC01" />
+    <file type="web" url="file://$PROJECT_DIR$/Code14SpringMVC02" />
+    <file type="web" url="file://$PROJECT_DIR$/Code15SpringMVC03" />
+    <file type="web" url="file://$PROJECT_DIR$/Code15SpringMVC03SSM" />
+    <file type="web" url="file://$PROJECT_DIR$/Code16SpringMVC04Interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/Code17Maven/code17mapper" />
+    <file type="web" url="file://$PROJECT_DIR$/Code17Maven/code17pojo" />
+    <file type="web" url="file://$PROJECT_DIR$/Code17Maven/code17ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -41,7 +48,29 @@
         <option value="$PROJECT_DIR$/Code09JavaSpring02Component/pom.xml" />
         <option value="$PROJECT_DIR$/Code05CookieSessionFilterAajxJSON/pom.xml" />
         <option value="$PROJECT_DIR$/Code13SpringMVC01/pom.xml" />
+        <option value="$PROJECT_DIR$/Code14SpringMVC02/pom.xml" />
+        <option value="$PROJECT_DIR$/Code15SSM/pom.xml" />
+        <option value="$PROJECT_DIR$/Code16SpringMVC03Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/Code15SpringMVC03SSM/pom.xml" />
+        <option value="$PROJECT_DIR$/Code16SpringMVC04Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven/code17dao/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven01/code17ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven01/code17pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven01/code17mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven01/Code17pom/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven/code17mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven/code17pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven/Code17pom/pom.xml" />
+        <option value="$PROJECT_DIR$/Code17Maven/code17ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/Code18SpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/Code19SpringBootSSM/pom.xml" />
+        <option value="$PROJECT_DIR$/Code20MybatisPlus/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Code15SpringMVC03/Code15SSM/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK">

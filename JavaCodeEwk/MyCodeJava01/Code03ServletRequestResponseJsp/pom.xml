@@ -58,7 +58,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <port>1111</port>
+          <port>1003</port>
           <path>/</path>  <!-- 设置后,不需要虚拟目录(目录访问路径) -->
           <uriEncoding>UTF-8</uriEncoding>
         </configuration>

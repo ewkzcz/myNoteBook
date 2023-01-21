@@ -1,0 +1,12 @@
+brand:
+  id: 1001
+  brandName: 京东
+  enterpriseName: 京东
+  introduce: 送货上门
+
+dataArr:
+  - Java
+  - C++
+  - C
+  - PHP
+  - Python

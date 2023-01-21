@@ -8,8 +8,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
+// 定义bean
 public class MybatisConfig {
-    // 定义bean,用于产生SqlSessionFactory对象
+    // 产生SqlSessionFactory对象
     @Bean
     public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) {  // 依赖坐标mybatis-spring
         // 为第三方bean注入资源dataSource,按类型自动装配
@@ -19,7 +20,7 @@ public class MybatisConfig {
         return sqlSessionFactoryBean;
     }
 
-    // 定义bean，返回MapperScannerConfigurer对象
+    // 产生MapperScannerConfigurer对象
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
@@ -27,6 +28,7 @@ public class MybatisConfig {
         return mapperScannerConfigurer;
     }
 
+    // 事务管理器
     @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource){
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();

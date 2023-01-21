@@ -6,19 +6,39 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Code05CookieSessionFilterAajxJSON" />
-        <module name="Code08JavaSpring01XML" />
+        <module name="code17pojo" />
         <module name="Code07Case2" />
+        <module name="Code13SpringMVC01" />
+        <module name="Code20MybatisPlus" />
+        <module name="Code10JavaSpring03Mybatis" />
+        <module name="Code05CookieSessionFilterAajxJSON" />
+        <module name="Code18SpringBoot" />
+        <module name="Code08JavaSpring01XML" />
+        <module name="Code16SpringMVC04Interceptor" />
+        <module name="code17ssm" />
         <module name="Code03ServletRequestResponseJsp" />
         <module name="Code11JavaSpring04AOP" />
         <module name="Code04Case1" />
         <module name="Code12JavaSpring05Transaction" />
+        <module name="Code14SpringMVC02" />
         <module name="Code09JavaSpring02Component" />
-        <module name="Code13SpringMVC01" />
+        <module name="Code15SpringMVC03SSM" />
+        <module name="Code19SpringBootSSM" />
+        <module name="code17mapper" />
         <module name="Code02MavenMyBatis" />
-        <module name="Code10JavaSpring03Mybatis" />
         <module name="Code06VueElement" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Code15SpringMVC03" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Code18SpringBoot" options="-parameters" />
+      <module name="Code19SpringBootSSM" options="-parameters" />
+      <module name="Code20MybatisPlus" options="-parameters" />
+      <module name="Code21generator" options="-parameters" />
+    </option>
   </component>
 </project>

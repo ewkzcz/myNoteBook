@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Code06VueElement:war">
+    <output-path>$PROJECT_DIR$/Code06VueElement/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Code06VueElement</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Code06VueElement-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Code06VueElement:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Code01JavaBasis/Code01JavaBasis.iml" filepath="$PROJECT_DIR$/Code01JavaBasis/Code01JavaBasis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Code15SpringMVC03SSM/Code15SpringMVC03.iml" filepath="$PROJECT_DIR$/Code15SpringMVC03SSM/Code15SpringMVC03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Code17Maven/Code17Maven.iml" filepath="$PROJECT_DIR$/Code17Maven/Code17Maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyCodeJava01.iml" filepath="$PROJECT_DIR$/MyCodeJava01.iml" />
     </modules>
   </component>

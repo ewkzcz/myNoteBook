@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Code03ServletRequestResponseJsp:war">
+    <output-path>$PROJECT_DIR$/Code03ServletRequestResponseJsp/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Code03ServletRequestResponseJsp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Code03ServletRequestResponseJsp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Code03ServletRequestResponseJsp:war exploded" />
+    </root>
+  </artifact>
+</component>
